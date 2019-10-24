@@ -5,9 +5,13 @@ VisualStudioVersion = 16.0.29326.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieApp.Data", "MovieApp.Data\MovieApp.Data.csproj", "{FD3CC16C-4FA9-4098-9DC4-6C55DCD2F5F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieApp.BL", "MovieApp.BL\MovieApp.BL.csproj", "{7CFB3280-46C8-4E48-A951-2A6CDC53F88E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieApp.BL", "MovieApp.BL\MovieApp.BL.csproj", "{7CFB3280-46C8-4E48-A951-2A6CDC53F88E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieApp.Web", "MovieApp.Web\MovieApp.Web.csproj", "{8224D70D-A630-465E-B371-292496B755C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieApp.Web", "MovieApp.Web\MovieApp.Web.csproj", "{8224D70D-A630-465E-B371-292496B755C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieApp.Tests", "MovieApp.Tests\MovieApp.Tests.csproj", "{5C9005B6-E988-4D1E-808D-9B967175E613}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{F01D3933-0E90-43D7-945B-6BAEC0BB74A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +31,18 @@ Global
 		{8224D70D-A630-465E-B371-292496B755C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8224D70D-A630-465E-B371-292496B755C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8224D70D-A630-465E-B371-292496B755C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C9005B6-E988-4D1E-808D-9B967175E613}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C9005B6-E988-4D1E-808D-9B967175E613}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C9005B6-E988-4D1E-808D-9B967175E613}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C9005B6-E988-4D1E-808D-9B967175E613}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FD3CC16C-4FA9-4098-9DC4-6C55DCD2F5F8} = {F01D3933-0E90-43D7-945B-6BAEC0BB74A4}
+		{7CFB3280-46C8-4E48-A951-2A6CDC53F88E} = {F01D3933-0E90-43D7-945B-6BAEC0BB74A4}
+		{8224D70D-A630-465E-B371-292496B755C9} = {F01D3933-0E90-43D7-945B-6BAEC0BB74A4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E43A212C-A3F5-4CBC-A23E-6589CCEFF637}
