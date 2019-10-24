@@ -13,6 +13,8 @@ using Microsoft.Extensions.Logging;
 using MovieApp.Data.EF;
 using Microsoft.EntityFrameworkCore;
 using MovieApp.BL;
+using MovieApp.Web.Filters;
+using Microsoft.AspNetCore.DataProtection;
 
 namespace MovieApp.Web
 {
@@ -28,10 +30,11 @@ namespace MovieApp.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc(options => options.Filters.Add(typeof(ExceptionFilter))).SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.AddControllers();
             services.AddDbContext<MovieAppContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.ServicesDI();
-            services.AddRouting();
+            services.AddRouting();   
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

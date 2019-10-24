@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MovieApp.BL.Infrastructure;
 using MovieApp.BL.Interfaces;
 using MovieApp.Data.EF;
 using MovieApp.Data.Entities;
@@ -18,14 +19,16 @@ namespace MovieApp.BL.Services
             Context = context;
         }
 
-        public async Task<Movie> GetById(int id)
+        public async Task<Movie> GetByIdAsync(int id)
         { 
-            return await Context.Movies
-                .Include(m => m.Genre)
-                .SingleOrDefaultAsync(m => m.Id == id);
+            var result = await Context.Movies.Include(m => m.Genre).SingleOrDefaultAsync(m => m.Id == id);
+            if (result == null)
+                throw new NotFoundException(nameof(Movie));
+
+            return result;
         }
 
-        public async Task<IEnumerable<Movie>> GetMoviesByDate(string date)
+        public async Task<IEnumerable<Movie>> GetMoviesByDateAsync(string date)
         {
             var movieIds = Context.ShowTimes
                 .Where(s => s.Date == date)
@@ -33,7 +36,7 @@ namespace MovieApp.BL.Services
                 .Distinct()
                 .ToArray();
             if (movieIds.Length == 0)
-                return null;
+                throw new NotFoundException(nameof(Movie));
 
             return await Context.Movies
                 .Where(m => movieIds.Contains(m.Id))

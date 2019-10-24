@@ -10,7 +10,7 @@ using MovieApp.BL.Interfaces;
 namespace MovieApp.Web.Controllers
 {
     [Route("api/[controller]")]
-    public class MoviesController<T> : Controller
+    public class MoviesController : Controller
     {
         private readonly IMovieService movieService;
         public MoviesController(IMovieService movieService)
@@ -22,21 +22,21 @@ namespace MovieApp.Web.Controllers
         [HttpGet("{id?}")]
         public async Task<IActionResult> Get(int id)
         {
-            var result = await movieService.GetById(id);
+            var result = await movieService.GetByIdAsync(id);
             if (result == null)
-                return BadRequest();
-            else
-                return Ok(result);
+                return NotFound();
+
+            return Ok(result);
         }
 
         [HttpGet("getbydate")]
         public async Task<IActionResult> GetByDate(string _date)
         {
-            var result = await movieService.GetMoviesByDate(_date);
+            var result = await movieService.GetMoviesByDateAsync(_date);
             if (result == null)
-                return BadRequest();
-            else
-                return Ok(result);
+                return NotFound();
+            
+            return Ok(result);
         }
     }
 

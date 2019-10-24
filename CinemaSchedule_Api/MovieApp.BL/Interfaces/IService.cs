@@ -9,6 +9,6 @@ namespace MovieApp.BL.Interfaces
 {
     public interface IService<TEntity> where TEntity : class
     {
-        Task<TEntity> GetById(int id);
+        Task<TEntity> GetByIdAsync(int id);
     }
 }

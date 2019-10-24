@@ -126,8 +126,6 @@ D:\RNJIN\Three_tier_architecture\Server\MovieApp.Web\bin\Debug\netcoreapp3.0\Mov
 D:\RNJIN\Three_tier_architecture\Server\MovieApp.Web\bin\Debug\netcoreapp3.0\MovieApp.Web.runtimeconfig.dev.json
 D:\RNJIN\Three_tier_architecture\Server\MovieApp.Web\bin\Debug\netcoreapp3.0\MovieApp.Web.dll
 D:\RNJIN\Three_tier_architecture\Server\MovieApp.Web\bin\Debug\netcoreapp3.0\MovieApp.Web.pdb
-D:\RNJIN\Three_tier_architecture\Server\MovieApp.Web\bin\Debug\netcoreapp3.0\AutoMapper.dll
-D:\RNJIN\Three_tier_architecture\Server\MovieApp.Web\bin\Debug\netcoreapp3.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 D:\RNJIN\Three_tier_architecture\Server\MovieApp.Web\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.Razor.Language.dll
 D:\RNJIN\Three_tier_architecture\Server\MovieApp.Web\bin\Debug\netcoreapp3.0\Microsoft.CodeAnalysis.dll
 D:\RNJIN\Three_tier_architecture\Server\MovieApp.Web\bin\Debug\netcoreapp3.0\Microsoft.CodeAnalysis.CSharp.dll
@@ -230,4 +228,3 @@ D:\RNJIN\Three_tier_architecture\Server\MovieApp.Web\obj\Debug\netcoreapp3.0\Mov
 D:\RNJIN\Three_tier_architecture\Server\MovieApp.Web\obj\Debug\netcoreapp3.0\MovieApp.Web.AssemblyInfo.cs
 D:\RNJIN\Three_tier_architecture\Server\MovieApp.Web\obj\Debug\netcoreapp3.0\MovieApp.Web.RazorTargetAssemblyInfo.cache
 D:\RNJIN\Three_tier_architecture\Server\MovieApp.Web\obj\Debug\netcoreapp3.0\MovieApp.Web.csproj.CopyComplete
-D:\RNJIN\Three_tier_architecture\Server\MovieApp.Web\bin\Debug\netcoreapp3.0\Ardalis.GuardClauses.dll

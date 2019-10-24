@@ -7,7 +7,7 @@ namespace MovieApp.BL.Interfaces
 {
     public interface IShowTimeService : IService<ShowTime>
     {
-        Task<IEnumerable<string>> GetDates();
-        Task<IEnumerable<string>> GetTimes(string date, int movie_id);
+        Task<IEnumerable<string>> GetDatesAsync();
+        Task<IEnumerable<string>> GetTimesAsync(string date, int movie_id);
     }
 }

@@ -8,6 +8,6 @@ namespace MovieApp.BL.Interfaces
 {
     public interface IMovieService : IService<Movie>
     {
-        Task<IEnumerable<Movie>> GetMoviesByDate(string date);
+        Task<IEnumerable<Movie>> GetMoviesByDateAsync(string date);
     }
 }

@@ -21,13 +21,21 @@ namespace MovieApp.Web.Controllers
         [HttpGet("GetDates")]
         public async Task<IActionResult> GetDates()
         {
-            return Ok(await showTimeService.GetDates());
+            var dates = await showTimeService.GetDatesAsync();
+            if (dates == null)
+                return NotFound();
+
+            return Ok();
         }
 
         [HttpGet("GetTimes")]
         public async Task<IActionResult> GetTimes(string _date, int id)
         {
-            return Ok(await showTimeService.GetTimes(_date, id));
+            var times = await showTimeService.GetTimesAsync(_date, id);
+            if (times == null)
+                return NotFound();
+
+            return Ok();
         }
     }
 }

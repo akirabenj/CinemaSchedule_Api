@@ -8,6 +8,6 @@ namespace MovieApp.BL.Interfaces
 {
     public interface IActorService : IService<Actor>
     {
-        Task<IEnumerable<Actor>> GetMovieActors(int id);
+        Task<IEnumerable<Actor>> GetMovieActorsAsync(int id);
     }
 }

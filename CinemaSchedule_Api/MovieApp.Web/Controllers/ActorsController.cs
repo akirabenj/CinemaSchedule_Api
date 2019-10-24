@@ -21,13 +21,21 @@ namespace MovieApp.Web.Controllers
         [HttpGet("{id?}")]
         public async Task<IActionResult> Get(int id)
         {
-            return Ok(await actorService.GetById(id));
+            var actor = await actorService.GetByIdAsync(id);
+            if (actor == null)
+                return NotFound();
+
+            return Ok(actor);
         }
 
         [HttpGet]
         public async Task<IActionResult> GetActorsByMovie(int id)
         {
-            return Ok(await actorService.GetMovieActors(id));
+            var actors = await actorService.GetMovieActorsAsync(id);
+            if (actors == null)
+                return NotFound();
+
+            return Ok(actors);
         }
     }
 }
