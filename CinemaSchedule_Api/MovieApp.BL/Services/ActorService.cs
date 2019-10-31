@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MovieApp.BL.DTO;
 using MovieApp.BL.Infrastructure;
 using MovieApp.BL.Interfaces;
 using MovieApp.Data.EF;
@@ -19,24 +20,36 @@ namespace MovieApp.BL.Services
             Context = context;
         }
 
-        public async Task<Actor> GetByIdAsync(int id)
+        public async Task<ActorDTO> GetByIdAsync(int id)
         {
             var result = await Context.Actors.FindAsync(id);
             if (result == null)
                 throw new NotFoundException(nameof(Actor));
-
-            return result;
+            var actor = new ActorDTO
+            {
+                Id = result.Id,
+                Name = result.Name
+            };
+            return actor;
         }
 
-        public async Task<IEnumerable<Actor>> GetMovieActorsAsync(int id)
+        public async Task<IEnumerable<ActorDTO>> GetMovieActorsAsync(int id)
         {
             var result = await Context.Actors
                 .Where(a => a.ActorMovies.Any(am => am.MovieId == id))
                 .ToListAsync();
             if (result == null)
                 throw new NotFoundException(nameof(Movie));
-
-            return result;
+            List<ActorDTO> actors = new List<ActorDTO>();
+            foreach(var actor in result)
+            {
+                actors.Add(new ActorDTO
+                {
+                    Id = actor.Id,
+                    Name = actor.Name
+                });
+            }
+            return actors;
 
         }
     }

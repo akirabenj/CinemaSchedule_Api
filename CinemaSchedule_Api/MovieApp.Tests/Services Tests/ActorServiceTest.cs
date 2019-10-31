@@ -43,6 +43,5 @@ namespace MovieApp.Tests.Services_Tests
             Console.WriteLine(actors.Count());
             Assert.AreEqual(actors.Count(), 2);
         }
-
     }
 }

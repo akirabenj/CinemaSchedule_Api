@@ -17,6 +17,6 @@ namespace MovieApp.Data.Entities
         public int GenreId { get; set; }
         public Genre Genre { get; set; }
 
-        public IEnumerable<ActorMovies> ActorMovies {get;set;}   
+        public IEnumerable<ActorMovies> ActorMovies {get;set;}
     }
 }

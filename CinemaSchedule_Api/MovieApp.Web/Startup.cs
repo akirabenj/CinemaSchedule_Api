@@ -1,3 +1,5 @@
+using System.Transactions;
+using System.Net.Mime;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +32,10 @@ namespace MovieApp.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(o => o.AddPolicy("localPolicy", builder =>
+            {
+                builder.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin();
+            }));
             services.AddMvc(options => options.Filters.Add(typeof(ExceptionFilter))).SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.AddControllers();
             services.AddDbContext<MovieAppContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -48,6 +54,8 @@ namespace MovieApp.Web
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors("localPolicy");
 
             app.UseAuthorization();
 

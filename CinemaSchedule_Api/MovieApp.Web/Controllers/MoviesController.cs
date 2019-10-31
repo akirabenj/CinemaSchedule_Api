@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MovieApp.BL.Interfaces;
 
+
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace MovieApp.Web.Controllers
@@ -16,6 +17,16 @@ namespace MovieApp.Web.Controllers
         public MoviesController(IMovieService movieService)
         {
             this.movieService = movieService;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+            var result = await movieService.GetAll();
+            if (result == null)
+                return NotFound();
+
+            return Ok(result);
         }
 
         //GetById

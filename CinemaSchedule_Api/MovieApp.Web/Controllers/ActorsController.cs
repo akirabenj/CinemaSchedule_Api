@@ -28,7 +28,7 @@ namespace MovieApp.Web.Controllers
             return Ok(actor);
         }
 
-        [HttpGet]
+        [HttpGet("getByMovie")]
         public async Task<IActionResult> GetActorsByMovie(int id)
         {
             var actors = await actorService.GetMovieActorsAsync(id);

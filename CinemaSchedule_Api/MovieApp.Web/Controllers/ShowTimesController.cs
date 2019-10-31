@@ -25,7 +25,7 @@ namespace MovieApp.Web.Controllers
             if (dates == null)
                 return NotFound();
 
-            return Ok();
+            return Ok(dates);
         }
 
         [HttpGet("GetTimes")]
@@ -35,7 +35,7 @@ namespace MovieApp.Web.Controllers
             if (times == null)
                 return NotFound();
 
-            return Ok();
+            return Ok(times);
         }
     }
 }
